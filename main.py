@@ -40,7 +40,7 @@ class ScrapeProcess(object):
         try:
             request = urllib2.Request(page.url.encode("utf8"))
             html    = urllib2.urlopen(request).read()
-        #except Exception, e:
+        except Exception, re:
             return
 
         emails = re.findall(r'([A-Za-z0-9\.\+_-]+@[A-Za-z0-9\._-]+\.[a-zA-Z]*)', html)
